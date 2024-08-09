@@ -186,22 +186,7 @@ class TestCoderAgent:
                 return self.write_generated_code_node_name
         
         return self.update_state_node_name
-    
-    def update_state(self, state: TestCoderState) -> TestCoderState:
-        """
-        This method updates the current state of the Architect agent with the provided state. 
 
-        Args:
-            state (ArchitectState): The new state to update the current state of the agent with.
-
-        Returns:
-            ArchitectState: The updated state of the agent.
-        """
-        logger.info(f"----{self.agent_name}: Proceeding with state update----")
-        
-        self.state = {**state}
-
-        return {**self.state}
     
 
     def update_state_skeleton_generation(self,current_sg:FunctionSkeleton)-> None:

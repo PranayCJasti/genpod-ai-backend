@@ -5,6 +5,7 @@ Agent graph state
 from typing_extensions import Annotated, TypedDict
 
 from models.models import Task
+from models.coder import FunctionSkeleton
 
 
 class CoderState(TypedDict):
@@ -47,6 +48,18 @@ class CoderState(TypedDict):
 
     # @in
     license_text: Annotated[str, ""]
+    # @in
+    functions_skeleton:Annotated[
+        FunctionSkeleton,
+        """The well detailed function skeleton for the functions that are in the code."""
+        ]
+
+    # @in
+    test_code: Annotated[
+        str, 
+        "The complete, well-documented working unit test code that adheres to all standards "
+        "requested with the programming language, framework user requested ",
+    ]
 
     # @inout
     current_task: Annotated[
